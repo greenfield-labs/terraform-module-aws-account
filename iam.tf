@@ -1,3 +1,7 @@
+resource "aws_iam_account_alias" "alias" {
+  account_alias = var.name
+}
+
 resource "aws_iam_openid_connect_provider" "github" {
   count = var.github_actions_oidc_enabled ? 1 : 0
 
